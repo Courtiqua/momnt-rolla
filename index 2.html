@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f65aa9"><title>MOMNT ROLLA</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{--pink:#ff72b6;--hot:#f83f9d;--lav:#b88cf2;--sky:#8fd8eb;--cream:#fff8fc;--ink:#302435;--muted:#756779;--berry:#542b63}
+*{box-sizing:border-box} body{margin:0;min-height:100%;font-family:ui-rounded,-apple-system,BlinkMacSystemFont,"SF Pro Display","Avenir Next",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 3%,rgba(255,255,255,.82),transparent 23%),linear-gradient(165deg,#ff8fc7 0%,#ffacd9 24%,#c9a8f4 49%,#a9c8f2 68%,#7bcfe1 100%);background-attachment:fixed}
+.shell{max-width:760px;margin:auto;padding:18px 15px 110px}.top{display:flex;justify-content:space-between;align-items:center;padding:7px 3px 22px}.wordmark{font-size:25px;font-weight:950;letter-spacing:-1.7px;line-height:.82}.wordmark span{display:block}.orb{width:43px;height:43px;border-radius:50%;background:linear-gradient(145deg,#ff4fa5,#b88cf2);box-shadow:0 8px 25px rgba(190,112,235,.3)}
+.hero{padding:20px 5px 12px}.eyebrow{font-size:11px;font-weight:950;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:47px;line-height:.92;letter-spacing:-2.6px;margin:11px 0}.hero p{margin:0 0 10px;line-height:1.45;color:#594b5c}
+.glass{background:rgba(255,248,252,.74);border:1px solid rgba(255,255,255,.75);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:27px;padding:18px;margin:14px 0;box-shadow:0 16px 42px rgba(65,48,55,.1)}
+.label{font-size:11px;font-weight:950;letter-spacing:.13em;text-transform:uppercase;color:#66586b;margin-bottom:10px}.pick{display:block;text-align:center;padding:25px 15px;border-radius:21px;background:linear-gradient(135deg,rgba(255,79,165,.94),rgba(181,132,239,.94));color:#fff;font-weight:950;font-size:17px}.pick small{display:block;font-size:12px;font-weight:600;opacity:.9;margin-top:5px}input[type=file]{display:none}
+.search{display:flex;gap:10px;align-items:center;background:#fff8fc;border-radius:18px;padding:5px 14px;margin-top:12px}.search b{font-size:22px}.search input,.auth input{border:0;outline:0;background:#fff8fc;width:100%;font-size:17px;padding:14px;border-radius:15px;color:var(--ink);margin:5px 0}.search input{padding:13px 0;margin:0;background:transparent;font-size:19px}
+.chips{display:flex;gap:8px;overflow:auto;padding-top:11px;scrollbar-width:none}.chip{border:0;border-radius:999px;padding:10px 13px;background:rgba(255,255,255,.72);font-weight:850;white-space:nowrap;color:var(--ink)}.chip.active{background:var(--hot);color:#fff}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:11px;font-size:12px;color:var(--muted)}.tiny{border:0;background:transparent;font-weight:900;color:var(--ink);padding:5px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:13px}.tile{aspect-ratio:1;border-radius:15px;overflow:hidden;position:relative;background:#e3d6e4;border:3px solid transparent}.tile.match{border-color:var(--hot)}.tile img,.tile video{width:100%;height:100%;object-fit:cover}.tick{position:absolute;left:6px;top:6px;width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:12px;font-weight:950}.tag{position:absolute;left:6px;right:6px;bottom:6px;background:rgba(48,36,53,.68);color:#fff;border-radius:9px;padding:4px 6px;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.info{font-size:13px;line-height:1.5;color:#625465}.result{font-weight:950;color:var(--berry)}
+.bottom{position:fixed;left:0;right:0;bottom:0;padding:15px 15px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(161,126,216,.9) 38%)}.bottomin{max-width:760px;margin:auto}.make,.authbtn{width:100%;border:0;border-radius:21px;padding:17px;background:var(--berry);color:#fff;font-size:17px;font-weight:950}.make:disabled{opacity:.42}.privacy{text-align:center;color:#fff;font-size:10px;font-weight:700;margin-top:6px}.authrow{display:flex;gap:8px;margin-top:8px}.authrow .authbtn{width:50%;font-size:14px;padding:13px}.status{font-size:12px;margin-top:9px;color:var(--muted)}.hide{display:none!important}
+</style></head>
+<body><main class="shell">
+<header class="top"><div class="wordmark"><span>MOMNT</span><span>ROLLA</span></div><div class="orb"></div></header>
+<section class="hero"><div class="eyebrow">Your life. Your Rolla.</div><h1>Find your<br>MOMNT.</h1><p>Your chosen memories stay in your private MOMNT ROLLA library — ready when you come back.</p></section>
+
+<section id="authCard" class="glass auth"><div class="label">Your private Rolla</div>
+<input id="email" type="email" autocomplete="email" placeholder="Email address">
+<input id="password" type="password" autocomplete="current-password" placeholder="Password (6+ characters)">
+<div class="authrow"><button id="signup" class="authbtn">CREATE ACCOUNT</button><button id="signin" class="authbtn">SIGN IN</button></div>
+<div id="authStatus" class="status">Create an account or sign in to access your private library.</div></section>
+
+<div id="app" class="hide">
+<section class="glass"><div class="label">1 · Add your memories</div>
+<label class="pick" for="picker">＋ Choose from Photos<small>Select the photos & videos you want inside MOMNT ROLLA</small></label>
+<input id="picker" type="file" accept="image/*,video/*" multiple>
+<div class="meta"><span id="count">Loading your Rolla…</span><span><button class="tiny" id="all">All</button><button class="tiny" id="clear">Clear selection</button></span></div>
+<div id="uploadStatus" class="status"></div></section>
+
+<section class="glass"><div class="label">2 · Find your moments</div>
+<div class="search"><b>⌕</b><input id="search" type="text" placeholder="nature, running, night, a location…"></div>
+<div class="chips"><button class="chip" data-q="nature">nature</button><button class="chip" data-q="running">running</button><button class="chip" data-q="kids">kids</button><button class="chip" data-q="sky">sky</button><button class="chip" data-q="day">day-to-day</button><button class="chip" data-q="night">night</button><button class="chip" data-q="beach">beach</button></div>
+<div class="meta"><span id="results">Loading…</span><button class="tiny" id="showAll">Show all</button></div>
+<div id="grid" class="grid"></div></section>
+
+<section class="glass"><div class="meta"><span id="who"></span><button id="signout" class="tiny">Sign out</button></div><div class="info">Your originals are stored in a private Supabase bucket under your account ID. MOMNT ROLLA creates temporary signed links only while you're viewing your library.</div></section>
+</div></main>
+<div id="bottom" class="bottom hide"><div class="bottomin"><button id="make" class="make" disabled>USE THESE MOMNTS →</button><div class="privacy">Your MOMNTs are private to your signed-in account.</div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const sb=supabase.createClient("https://wwpzpdgagjgozbnynjvn.supabase.co","sb_publishable_QHo098Fgat6tidEHLs6M6w_DyBmwOYR"),BUCKET="MOMNT ROLLA";
+let user=null,items=[];
+const $=s=>document.querySelector(s),picker=$('#picker'),grid=$('#grid'),search=$('#search'),count=$('#count'),results=$('#results'),make=$('#make');
+async function authState(session){user=session?.user||null;$('#authCard').classList.toggle('hide',!!user);$('#app').classList.toggle('hide',!user);$('#bottom').classList.toggle('hide',!user);if(user){$('#who').textContent=user.email||'Signed in';await loadLibrary()}else{items=[]}}
+async function signUp(){const email=$('#email').value.trim(),password=$('#password').value;if(!email||password.length<6){$('#authStatus').textContent='Enter an email and a password of at least 6 characters.';return}$('#authStatus').textContent='Creating account…';const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin}});if(error){$('#authStatus').textContent=error.message;return}$('#authStatus').textContent=data.session?'Account created — you’re in ✨':'Check your email to confirm your account, then come back and sign in ✨'}
+async function signIn(){const {error}=await sb.auth.signInWithPassword({email:$('#email').value.trim(),password:$('#password').value});$('#authStatus').textContent=error?error.message:'Signing in…'}
+$('#signup').onclick=signUp;$('#signin').onclick=signIn;$('#signout').onclick=()=>sb.auth.signOut();
+async function loadLibrary(){items=[];grid.innerHTML='';count.textContent='Loading your Rolla…';const {data,error}=await sb.storage.from(BUCKET).list(user.id,{limit:100,sortBy:{column:'created_at',order:'desc'}});if(error){count.textContent='Could not load library';results.textContent=error.message;return}
+for(const f of (data||[])){if(!f.id)continue;const path=user.id+'/'+f.name;const {data:signed,error:e}=await sb.storage.from(BUCKET).createSignedUrl(path,3600);if(!e)items.push({name:f.name,path,url:signed.signedUrl,type:(f.metadata&&f.metadata.mimetype)||'',selected:true})}render();doSearch()}
+async function upload(files){if(!files.length)return;$('#uploadStatus').textContent=`Uploading ${files.length} MOMNT${files.length===1?'':'s'}…`;let n=0;for(const file of files){const clean=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const path=user.id+'/'+Date.now()+'-'+crypto.randomUUID().slice(0,8)+'-'+clean;const {error}=await sb.storage.from(BUCKET).upload(path,file,{contentType:file.type,upsert:false});if(error){$('#uploadStatus').textContent='Upload failed: '+error.message;return}n++;$('#uploadStatus').textContent=`Uploaded ${n}/${files.length}…`}picker.value='';$('#uploadStatus').textContent='Saved to your private Rolla ✨';await loadLibrary()}
+picker.onchange=()=>upload([...picker.files]);
+function render(filtered=null){grid.innerHTML='';items.forEach((it,i)=>{if(filtered&&!filtered.includes(i))return;const d=document.createElement('div');d.className='tile '+(it.selected?'match':'');d.onclick=()=>{it.selected=!it.selected;render(filtered);update()};const isVideo=it.type.startsWith('video/')||/\.(mp4|mov|m4v|webm)$/i.test(it.name);const m=document.createElement(isVideo?'video':'img');m.src=it.url;if(isVideo){m.muted=true;m.playsInline=true;m.controls=true}d.appendChild(m);const c=document.createElement('div');c.className='tick';c.textContent=it.selected?'✓':'';d.appendChild(c);const t=document.createElement('div');t.className='tag';t.textContent=it.name;d.appendChild(t);grid.appendChild(d)});update()}
+function update(){const n=items.filter(x=>x.selected).length;count.textContent=items.length?`${items.length} saved · ${n} chosen`:'Your Rolla is empty';make.disabled=!n}
+function doSearch(){const q=search.value.trim().toLowerCase();if(!items.length){results.textContent='Add media to start searching.';render();return}if(!q){results.textContent=`Showing all ${items.length} memories`;render();return}const terms=q.split(/[,+]/).map(x=>x.trim()).filter(Boolean),ids=[];items.forEach((it,i)=>{if(terms.some(t=>(it.name+' '+it.type).toLowerCase().includes(t)))ids.push(i)});render(ids);results.textContent=ids.length?`${ids.length} possible match${ids.length===1?'':'es'} found`:'No filename matches yet — visual Smart Find is the next layer.'}
+search.oninput=doSearch;document.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{search.value=b.dataset.q;document.querySelectorAll('[data-q]').forEach(x=>x.classList.remove('active'));b.classList.add('active');doSearch()});$('#showAll').onclick=()=>{search.value='';document.querySelectorAll('[data-q]').forEach(x=>x.classList.remove('active'));doSearch()};$('#all').onclick=()=>{items.forEach(x=>x.selected=true);doSearch()};$('#clear').onclick=()=>{items.forEach(x=>x.selected=false);render();};make.onclick=()=>alert(`${items.filter(x=>x.selected).length} MOMNTs selected ✨\\n\\nNext: montage builder.`);
+sb.auth.getSession().then(({data})=>authState(data.session));sb.auth.onAuthStateChange((_event,session)=>setTimeout(()=>authState(session),0));
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></body></html>
