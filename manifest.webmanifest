@@ -1,0 +1,9 @@
+{
+  "name": "MOMNT ROLLA",
+  "short_name": "MOMNT",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ff8fc7",
+  "theme_color": "#f65aa9",
+  "icons": []
+}
